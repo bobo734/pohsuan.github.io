@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoBo Huang | Personal Website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: white;
+      margin-bottom: 24px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      margin-bottom: 18px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #dbeafe;
+      padding-bottom: 8px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .project {
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .project:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .project h3 {
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #4b5563;
+    }
+
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .section {
+        padding: 22px;
+      }
+
+      nav a {
+        padding: 12px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BoBo Huang</h1>
+    <p>Graduate Student | Computer Science and Engineering | NSYSU</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a graduate student in the Department of Computer Science and Engineering at
+        National Sun Yat-sen University. My work focuses on computer vision, artificial intelligence,
+        image processing, and smart aquaculture applications. I am interested in building practical AI systems
+        that connect research with real-world deployment.
+      </p>
+    </section>
+
+    <section class="section" id="research">
+      <h2>Research Interests</h2>
+      <p>
+        My research interests include computer vision, YOLO-based object detection, image rectification,
+        edge AI deployment, and AIoT applications for smart aquaculture.
+      </p>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">OpenCV</span>
+        <span class="skill-tag">YOLO</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">Flask</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Selected Projects</h2>
+
+      <div class="project">
+        <h3>Smart Aquaculture Monitoring System</h3>
+        <p>
+          Developed an AI-based monitoring system for shrimp farming using underwater cameras,
+          YOLO detection models, and sensor-integrated AIoT architecture.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Image Rectification and Screen Extraction</h3>
+        <p>
+          Designed an image processing pipeline using OpenCV to detect A4 reference regions,
+          perform perspective correction, and accurately crop target display areas.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Learning Management System</h3>
+        <p>
+          Built a web-based learning management system with PHP and SQL, supporting course management,
+          announcements, assignments, grading, and user authentication.
+        </p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your_email@email.com">your_email@email.com</a></p>
+      <p>GitHub: <a href="https://github.com/bobo734" target="_blank">github.com/bobo734</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 BoBo Huang. All rights reserved.
+  </footer>
+
+</body>
+</html>
