@@ -365,13 +365,7 @@
       </div>
 
       <aside class="card profile-card">
-        <div class="photo-placeholder">
-          <div>
-            <strong>個人照片建議放這裡</strong><br />
-            形象建議：正面半身照、簡單背景、襯衫或素色上衣<br />
-            檔名建議：images/profile.jpg
-          </div>
-        </div>
+        <img src="images/login.png" alt="System login interface" style="width:100%; border-radius:18px; border:1px solid rgba(255,255,255,0.08); object-fit:cover; max-height:280px;" />
         <div class="info-list">
           <div class="info-item"><strong>Name:</strong> Bo-Hsuan Huang</div>
           <div class="info-item"><strong>Email:</strong> your_email@example.com</div>
@@ -523,19 +517,53 @@
         <p class="section-desc">這一區預留給你放實作圖，能讓 GitHub Pages 看起來更像真正作品集，而不是只有文字履歷。</p>
         <div class="gallery-grid">
           <div class="card gallery-item">
-            <div class="image-placeholder">建議圖 1<br />離水蝦隻原始照片 + 偵測框結果</div>
-            <div><strong>Detection Result</strong></div>
-            <div class="muted">展示 YOLO 實際辨識效果</div>
+            <img src="images/locate.png" alt="Original shrimp image with marker detection" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>Marker Detection</strong></div>
+            <div class="muted">原始離水蝦影像與四角定位結果，展示校正前的標記辨識能力。</div>
           </div>
           <div class="card gallery-item">
-            <div class="image-placeholder">建議圖 2<br />A4 基準定位 / 透視校正前後對照</div>
-            <div><strong>Calibration Workflow</strong></div>
-            <div class="muted">展示量測流程核心技術</div>
+            <img src="images/out.jpg" alt="Rectified shrimp image after perspective calibration" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>Rectified Output</strong></div>
+            <div class="muted">透視校正後的量測畫面，可對應蝦體位置與尺規基準。</div>
           </div>
           <div class="card gallery-item">
-            <div class="image-placeholder">建議圖 3<br />Flask 平台畫面：上傳 / 結果查詢頁</div>
-            <div><strong>Platform UI</strong></div>
-            <div class="muted">展示系統落地與前後端整合</div>
+            <img src="images/workflow.png" alt="Workflow diagram for shrimp image upload and measurement" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>Measurement Workflow</strong></div>
+            <div class="muted">從樣本照片上傳、影像校正到辨識與資料庫整合的流程示意。</div>
+          </div>
+        </div>
+        <div class="gallery-grid" style="margin-top:18px;">
+          <div class="card gallery-item">
+            <img src="images/main_page.jpg" alt="Main upload page of the shrimp image management system" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>Upload Interface</strong></div>
+            <div class="muted">使用者可上傳圖片、填寫健康狀態與基本養殖資訊。</div>
+          </div>
+          <div class="card gallery-item">
+            <img src="images/data_manage.jpg" alt="Folder management interface of the image management platform" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>Data Management</strong></div>
+            <div class="muted">日期資料夾管理畫面，展示平台對影像與結果資料的組織能力。</div>
+          </div>
+          <div class="card gallery-item">
+            <img src="images/result_page.jpg" alt="Length and weight analytics charts of shrimp results" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>Result Analytics</strong></div>
+            <div class="muted">長度與重量查詢圖表頁面，呈現量測結果的後續分析能力。</div>
+          </div>
+        </div>
+        <div class="gallery-grid" style="margin-top:18px;">
+          <div class="card gallery-item">
+            <img src="images/system_Architecture.png" alt="System architecture diagram for smart aquaculture microservices" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08); background:#fff;" />
+            <div><strong>System Architecture</strong></div>
+            <div class="muted">智慧養殖平台的微服務與資料流架構圖，展示系統整合與部署思維。</div>
+          </div>
+          <div class="card gallery-item">
+            <img src="images/AI_underwatersystem.png" alt="Smart aquaculture dashboard with underwater images and AI charts" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>Aquaculture Dashboard</strong></div>
+            <div class="muted">智慧養殖管理介面，整合影像、辨識圖表與場域資訊。</div>
+          </div>
+          <div class="card gallery-item">
+            <img src="images/login.png" alt="User login page" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div><strong>User Login</strong></div>
+            <div class="muted">平台登入頁，補足完整系統從登入到資料查詢的使用流程。</div>
           </div>
         </div>
       </div>
