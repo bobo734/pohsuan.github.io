@@ -153,16 +153,19 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+      align-self: start;
     }
 
     .profile-photo {
       width: 100%;
-      height: 340px;
-      object-fit: cover;
-      object-position: center top;
+      max-height: 520px;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.08);
       background: #0f1730;
+      padding: 10px;
     }
 
     .info-list {
@@ -338,7 +341,7 @@
       }
 
       .profile-photo {
-        height: 420px;
+        max-height: 420px;
       }
 
       .gallery-image-wrap {
@@ -370,7 +373,7 @@
       }
 
       .profile-photo {
-        height: 320px;
+        max-height:: 320px;
       }
 
       .gallery-image-wrap {
@@ -662,9 +665,14 @@
           <p><strong>Email:</strong> <a href="mailto:your_email@example.com">corkcork666@gmail.com</a></p>
           <p><strong>phone:</strong> +886965722706</p>
 
-          <a class="btn btn-secondary" href="resume.pdf" target="_blank">
-              Download Resume
-          </a>
+          <div class="hero-actions" style="margin-top: 16px;">
+              <a class="btn btn-primary" href="resume.pdf" target="_blank">
+                Resume (English)
+              </a>
+              <a class="btn btn-secondary" href="resume_chinese.pdf" target="_blank">
+                簡歷 (中文)
+              </a>
+            </div>
         </div>
       </div>
     </section>
