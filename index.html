@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,12 +22,18 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: "Segoe UI", "Noto Sans TC", Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(180deg, #09101f 0%, #0b1020 100%);
       color: var(--text);
       line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a { color: var(--accent); text-decoration: none; }
@@ -149,22 +155,14 @@
       gap: 16px;
     }
 
-    .photo-placeholder,
-    .image-placeholder {
-      border: 1.5px dashed rgba(255,255,255,0.2);
+    .profile-photo {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center top;
       border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      text-align: center;
-      padding: 18px;
-    }
-
-    .photo-placeholder {
-      min-height: 280px;
-      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0f1730;
     }
 
     .info-list {
@@ -178,6 +176,7 @@
       border-radius: 14px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.04);
+      word-break: break-word;
     }
 
     section {
@@ -274,16 +273,43 @@
     }
 
     .gallery-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .gallery-item {
       padding: 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
     }
 
-    .gallery-item .image-placeholder {
-      min-height: 190px;
-      margin-bottom: 10px;
+    .gallery-image-wrap {
+      width: 100%;
+      min-height: 260px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+
+    .gallery-image-wrap img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .gallery-item strong {
+      font-size: 1rem;
+      display: inline-block;
+      margin-bottom: 4px;
     }
 
     .contact-grid {
@@ -310,6 +336,18 @@
       .gallery-grid {
         grid-template-columns: 1fr;
       }
+
+      .profile-photo {
+        height: 420px;
+      }
+
+      .gallery-image-wrap {
+        min-height: 320px;
+      }
+
+      .gallery-image-wrap img {
+        height: 300px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -329,6 +367,18 @@
 
       .nav-links {
         gap: 12px;
+      }
+
+      .profile-photo {
+        height: 320px;
+      }
+
+      .gallery-image-wrap {
+        min-height: 220px;
+      }
+
+      .gallery-image-wrap img {
+        height: 200px;
       }
     }
   </style>
@@ -365,7 +415,7 @@
       </div>
 
       <aside class="card profile-card">
-        <img src="images/login.png" alt="System login interface" style="width:100%; border-radius:18px; border:1px solid rgba(255,255,255,0.08); object-fit:cover; max-height:280px;" />
+        <img src="images/profile.jpg" alt="Bo-Hsuan Huang profile photo" class="profile-photo" />
         <div class="info-list">
           <div class="info-item"><strong>Name:</strong> Bo-Hsuan Huang</div>
           <div class="info-item"><strong>Email:</strong> your_email@example.com</div>
@@ -407,7 +457,7 @@
             <span class="tag">Platform Development</span>
           </div>
           <p class="small-note">
-            建議之後可再補：Kubernetes、REST API、Microservices、LLM Integration（若後續有完成實作）
+            Additional future skills to highlight: Kubernetes, REST API, Microservices, and LLM integration.
           </p>
         </div>
       </div>
@@ -513,57 +563,84 @@
 
     <section id="gallery">
       <div class="container">
-        <h2 class="section-title">Suggested Visuals</h2>
-        <p class="section-desc">這一區預留給你放實作圖，能讓 GitHub Pages 看起來更像真正作品集，而不是只有文字履歷。</p>
+        <h2 class="section-title">Project Visuals</h2>
+        <p class="section-desc">This section presents real engineering outputs, platform screenshots, and workflow diagrams that demonstrate system implementation beyond a text-only resume.</p>
+
         <div class="gallery-grid">
           <div class="card gallery-item">
-            <img src="images/locate.png" alt="Original shrimp image with marker detection" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/locate.png" alt="Original shrimp image with marker detection" />
+            </div>
             <div><strong>Marker Detection</strong></div>
-            <div class="muted">原始離水蝦影像與四角定位結果，展示校正前的標記辨識能力。</div>
+            <div class="muted">Original out-of-water shrimp image with detected corner markers used for calibration and perspective correction.</div>
           </div>
+
           <div class="card gallery-item">
-            <img src="images/out.jpg" alt="Rectified shrimp image after perspective calibration" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/out.jpg" alt="Rectified shrimp image after perspective calibration" />
+            </div>
             <div><strong>Rectified Output</strong></div>
-            <div class="muted">透視校正後的量測畫面，可對應蝦體位置與尺規基準。</div>
+            <div class="muted">Perspective-corrected image used to align the shrimp and reference scale for more accurate measurement.</div>
           </div>
+
           <div class="card gallery-item">
-            <img src="images/workflow.png" alt="Workflow diagram for shrimp image upload and measurement" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/workflow.png" alt="Workflow diagram for shrimp image upload and measurement" />
+            </div>
             <div><strong>Measurement Workflow</strong></div>
-            <div class="muted">從樣本照片上傳、影像校正到辨識與資料庫整合的流程示意。</div>
+            <div class="muted">End-to-end workflow from image upload and calibration to AI analysis, weight extraction, and database integration.</div>
           </div>
         </div>
+
         <div class="gallery-grid" style="margin-top:18px;">
           <div class="card gallery-item">
-            <img src="images/main_page.jpg" alt="Main upload page of the shrimp image management system" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/main_page.jpg" alt="Main upload page of the shrimp image management system" />
+            </div>
             <div><strong>Upload Interface</strong></div>
-            <div class="muted">使用者可上傳圖片、填寫健康狀態與基本養殖資訊。</div>
+            <div class="muted">Users can upload shrimp images and record health status and core farming information through the web interface.</div>
           </div>
+
           <div class="card gallery-item">
-            <img src="images/data_manage.jpg" alt="Folder management interface of the image management platform" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/data_manage.jpg" alt="Folder management interface of the image management platform" />
+            </div>
             <div><strong>Data Management</strong></div>
-            <div class="muted">日期資料夾管理畫面，展示平台對影像與結果資料的組織能力。</div>
+            <div class="muted">Folder-based dataset management interface for organizing shrimp images and processing results by date.</div>
           </div>
+
           <div class="card gallery-item">
-            <img src="images/result_page.jpg" alt="Length and weight analytics charts of shrimp results" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/result_page.jpg" alt="Length and weight analytics charts of shrimp results" />
+            </div>
             <div><strong>Result Analytics</strong></div>
-            <div class="muted">長度與重量查詢圖表頁面，呈現量測結果的後續分析能力。</div>
+            <div class="muted">Analytics dashboard visualizing shrimp length and weight trends across different farming ponds.</div>
           </div>
         </div>
+
         <div class="gallery-grid" style="margin-top:18px;">
           <div class="card gallery-item">
-            <img src="images/system_Architecture.png" alt="System architecture diagram for smart aquaculture microservices" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08); background:#fff;" />
+            <div class="gallery-image-wrap">
+              <img src="images/system_Architecture.png" alt="System architecture diagram for smart aquaculture microservices" />
+            </div>
             <div><strong>System Architecture</strong></div>
-            <div class="muted">智慧養殖平台的微服務與資料流架構圖，展示系統整合與部署思維。</div>
+            <div class="muted">Microservice architecture showing AI inference, IoT data flow, backend services, and platform integration.</div>
           </div>
+
           <div class="card gallery-item">
-            <img src="images/AI_underwatersystem.png" alt="Smart aquaculture dashboard with underwater images and AI charts" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/AI_underwatersystem.png" alt="Smart aquaculture dashboard with underwater images and AI charts" />
+            </div>
             <div><strong>Aquaculture Dashboard</strong></div>
-            <div class="muted">智慧養殖管理介面，整合影像、辨識圖表與場域資訊。</div>
+            <div class="muted">Smart aquaculture management dashboard integrating underwater images, AI charts, and site-level information.</div>
           </div>
+
           <div class="card gallery-item">
-            <img src="images/login.png" alt="User login page" style="width:100%; border-radius:14px; margin-bottom:10px; border:1px solid rgba(255,255,255,0.08);" />
+            <div class="gallery-image-wrap">
+              <img src="images/login.png" alt="User login page" />
+            </div>
             <div><strong>User Login</strong></div>
-            <div class="muted">平台登入頁，補足完整系統從登入到資料查詢的使用流程。</div>
+            <div class="muted">User authentication page demonstrating the complete platform workflow from login to data query.</div>
           </div>
         </div>
       </div>
@@ -580,13 +657,14 @@
             <li>Strong interest in applying engineering methods to intelligent manufacturing, AI systems, and enterprise IT platforms.</li>
           </ul>
         </div>
+
         <div class="card contact-card">
           <h2 class="section-title">Contact</h2>
           <p><strong>Email:</strong> <a href="mailto:your_email@example.com">your_email@example.com</a></p>
           <p><strong>GitHub:</strong> <a href="https://github.com/your_account" target="_blank">github.com/your_account</a></p>
           <p><strong>LinkedIn:</strong> <a href="#">Add your LinkedIn URL</a></p>
-          <p><strong>Resume:</strong> Add PDF resume link here if available.</p>
-          <p class="small-note">建議之後把 PDF 履歷放進 repository，連到 <code>resume.pdf</code>。</p>
+          <p><strong>Resume:</strong> Add a PDF resume link here if available.</p>
+          <p class="small-note">You can place your PDF resume in the repository and link it as <code>resume.pdf</code>.</p>
         </div>
       </div>
     </section>
